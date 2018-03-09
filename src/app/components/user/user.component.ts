@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataService} from '../../services/data.service';
 
 @Component({
   selector: 'app-user',
@@ -17,7 +18,7 @@ export class UserComponent implements OnInit {
   /** constructor() and ngOnInit()
    * these two idiots runs together
    */
-  constructor() { 
+  constructor(private dataService: DataService) { 
     console.log('constructor running...')
   }
 
@@ -35,8 +36,11 @@ export class UserComponent implements OnInit {
       pin: 411008,
       country: ' India'
     }
-    this.hobbies= ['Coding','Watching movies', 'Reading books']
+    this.hobbies= ['Coding','Watching movies', 'Reading books'];
+
   }
+  
+
   onClick(){
     //console.log('Hello')
     /***
@@ -59,6 +63,7 @@ export class UserComponent implements OnInit {
       }
     }
   }
+  
 }
 
 interface Address  {
