@@ -1,0 +1,27 @@
+<h1>{{name}}'s Profile</h1>
+
+<ul>
+<li><h2>name: {{name}}</h2></li>
+<li><h3>profession: {{profession}}</h3></li>
+<li><h3>experience: {{experience}}</h3></li>
+<li><h3>Age: {{age}} Years</h3></li>
+<li><h3>Address: {{address.house_no}}{{address.street}}{{address.city}}{{address.state}}{{address.pin}}{{address.country}}</h3></li>
+<li><h3>Hobbies: </h3>
+  <form (submit)= "addHobby(hobby.value)">
+    <div>
+      <label for="hobby">Add Hobby:</label>
+      <input type="text" #hobby>
+    </div>
+  </form>
+  <ul>
+      <li *ngFor="let hobby of hobbies; let i= index">
+        {{i + 1}}: {{hobby}} 
+      </li>
+  </ul>
+</li>
+</ul>
+
+<button (click)= "onClick()">Click Me</button>
+
+
+
