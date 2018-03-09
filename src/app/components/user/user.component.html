@@ -23,5 +23,54 @@
 
 <button (click)= "onClick()">Click Me</button>
 
+<h1>Edit User</h1>
+<form>
+  <div>
+    <label for="name">Name: </label><br>
+    <input type="text" [(ngModel)]="name" name="name"> 
+  </div>
+  <div>
+      <label for="profession">Profession: </label><br>
+      <input type="text" [(ngModel)]="profession" name="profession">
+  </div>
+  <div>
+      <label for="experience">Experience: </label><br>
+      <input type="text" [(ngModel)]="experience" name="experience">
+  </div>
+  <div>
+      <label for="age">Age: </label><br>
+      <input type="number" [(ngModel)]="age" name="age">
+  </div>
+  <div>
+      <label for="house_no">House No: </label><br>
+      <input type="text" [(ngModel)]="address.house_no" name="house_no">
+  </div>
+  <div>
+      <label for="street">Street: </label><br>
+      <input type="text" [(ngModel)]="address.street" name="street">
+  </div>
+  <div>
+      <label for="city">City: </label><br>
+      <input type="text" [(ngModel)]="address.city" name="city">
+  </div>
+  <div>
+      <label for="state">State: </label><br>
+      <input type="text" [(ngModel)]="address.state" name="state">
+  </div>
+  <div>
+      <label for="pin">Pin code: </label><br>
+      <input type="number" [(ngModel)]="address.pin" name="pin">
+  </div>
+  <div>
+      <label for="country">Country:</label><br>
+      <input type="text" [(ngModel)]="address.country" name="country">
+  </div>
+
+  
+
+
+
+</form>
+
 
 
