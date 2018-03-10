@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService} from '../../services/data.service';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-user',
@@ -13,6 +14,7 @@ export class UserComponent implements OnInit {
   age: number;
   address: Address;
   hobbies: string[];
+  posts: Posts[];
   
 
   /** constructor() and ngOnInit()
@@ -37,7 +39,10 @@ export class UserComponent implements OnInit {
       country: ' India'
     }
     this.hobbies= ['Coding','Watching movies', 'Reading books'];
-
+    this.dataService.getPosts().subscribe((posts) => {
+      //console.log(posts);
+      this.posts = posts;
+    });
   }
   
 
@@ -63,7 +68,6 @@ export class UserComponent implements OnInit {
       }
     }
   }
-  
 }
 
 interface Address  {
@@ -73,4 +77,11 @@ interface Address  {
   state: string,
   pin: number,
   country: string
+}
+
+interface Posts {
+  id: number,
+  title: string,
+  body: string,
+  userId: number
 }
