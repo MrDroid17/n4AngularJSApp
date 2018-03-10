@@ -15,8 +15,8 @@ export class UserComponent implements OnInit {
   address: Address;
   hobbies: string[];
   posts: Posts[];
+  isEdit: boolean = false;
   
-
   /** constructor() and ngOnInit()
    * these two idiots runs together
    */
@@ -43,6 +43,7 @@ export class UserComponent implements OnInit {
       //console.log(posts);
       this.posts = posts;
     });
+  
   }
   
 
@@ -68,6 +69,11 @@ export class UserComponent implements OnInit {
       }
     }
   }
+
+  toggleEditUser(){
+    this.isEdit = !this.isEdit;
+  }
+
 }
 
 interface Address  {
